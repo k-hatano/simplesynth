@@ -9,6 +9,7 @@ before_deploy:
   - git config --local user.email "marnen@marnen.org"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
+  - git push origin --tags
   - zip SimpleSynth.app /Users/travis/build/marnen/simplesynth/build/Release/SimpleSynth.app
 
 deploy:
