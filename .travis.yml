@@ -16,6 +16,7 @@ deploy:
   edge: true
   provider: releases
   file: SimpleSynth.app.zip
-  # on:
-  #   tags: true
+  on:
+    all_branch: true
+    # tags: true
   draft: true
