@@ -293,5 +293,10 @@
     ]];
 }
 
+- (IBAction)xgForwardCompatibilityModeButtonChanged:(id)sender
+{
+    [audioSystem setXgForwardCompatibilityMode:xgForwardCompatibilityModeButton.state == NSOnState];
+}
+
 
 @end

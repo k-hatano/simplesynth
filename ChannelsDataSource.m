@@ -32,6 +32,9 @@
     if ([[column identifier] isEqualToString:@"channel"]) {
         return [NSString stringWithFormat:@"%d", rowIndex+1];
     }
+    else if ([[column identifier] isEqualToString:@"id"]) {
+        return [NSString stringWithFormat:@"%08x", [audioSystem currentInstrumentOnChannel:rowIndex]];
+    }
     else {
         return [audioSystem nameOfInstrument:[audioSystem currentInstrumentOnChannel:rowIndex]];
     }

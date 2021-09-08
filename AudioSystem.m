@@ -280,6 +280,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"instrumentChanged" object:self];
 }
 
+- (void)setXgForwardCompatibilityMode:(BOOL)value
+{
+    xgForwardCompatibilityMode = value;
+}
+
 
 - (float)getFilterCutoffMin
 {
@@ -402,6 +407,11 @@
     BOOL			instrumentChanged = NO;
     // int				i;
     // NSMutableString* text;
+    
+    // Ignore MIDI bank select events
+    if (xgForwardCompatibilityMode && ((message[0] & 0xF0) == 0xB0)) {
+        return;
+    }
     
     AUGraphGetNodeInfo (graph, synthNode, NULL, NULL, NULL, &synthUnit);
     

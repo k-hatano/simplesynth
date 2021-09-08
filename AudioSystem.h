@@ -28,6 +28,7 @@ typedef struct {
     AUNode filterNode;
     AUNode outputNode;
     MusicDeviceInstrumentID channelInstrument[16];
+    BOOL xgForwardCompatibilityMode;
     
     // MIDI related
     PYMIDIEndpoint*	currentMIDIEndpoint;
@@ -48,6 +49,7 @@ typedef struct {
 + (MusicDeviceInstrumentID)instrumentToInstrumentID:(MIDIInstrument)instrument;
 - (MusicDeviceInstrumentID)currentInstrumentOnChannel:(int)channel;
 - (void)setInstrument:(MusicDeviceInstrumentID)instrumentID forChannel:(int)channel;
+- (void)setXgForwardCompatibilityMode:(BOOL)value;
 
 - (float)getFilterCutoffMin;
 - (float)getFilterCutoffMax;

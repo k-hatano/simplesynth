@@ -21,6 +21,7 @@
     IBOutlet NSTextField*	bankSelectLSBField;
     IBOutlet NSSlider*		cutoffSlider;
     IBOutlet GaugeView*		cpuLoadGuage;
+    IBOutlet NSButton*      xgForwardCompatibilityModeButton;
     
     NSTimer*					uiUpdateTimer;
 
@@ -54,5 +55,7 @@
 - (IBAction)displayLicense:(id)sender;
 - (IBAction)visitWebSite:(id)sender;
 - (IBAction)sendFeedback:(id)sender;
+
+- (IBAction)xgForwardCompatibilityModeButtonChanged:(id)sender;
 
 @end
